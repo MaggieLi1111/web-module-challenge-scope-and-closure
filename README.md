@@ -59,6 +59,9 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+Closure gives us the ability for a child function to access variables from a higher level scope even after the variables have been called or closed or terminated, and a closure happens when an inner funtion reaches into it's outer scope to grab a value defined in the outer function.
+
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,9 +83,15 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+return function()
+The personalDice(name) function creates a return function(), which is an inner funtion that is defined inside personalDice() and is available only within the body of personalDice() function. Since inner function has access to the variable of outer funtion, it can use variable declared in the parent funtion.
 
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+name which is "Dan" should be always the same,
+newRoll could change.
+
+c. What is the lexical scope of `newRoll`? 
+return a random number between 0 and 5
 
 ### Task 3 - Stretch Goals
 
