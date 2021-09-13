@@ -28,11 +28,21 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  Counter1 is a function declaration, using scoped variable.
+  Counter2 uses global variable.
+
   
   2. Which of the two uses a closure? How can you tell?
+  Counter1 uses a closure.
+  Function counterMaker() create a local variable called count and a function counter(), which is a closure.
+  The counter() function is an inner funtion that is defined inside counterMaker() and is available only within the body of counterMaker() function. Counter() function has no local variables of its own. However, since inner funtion have access to the variable of outer funtion, counter()function can use count variable declared in the parent funtion, counterMaker().
+
+
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?      
+     counter1 code is preferable when we just want to use scoped function variable.
+     When we need to access the counter variable globally, counter2 would be better.
 */
 
 // counter1 code
@@ -62,10 +72,12 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * Math.floor(3));
 }
-
+console.log(inning());
+console.log(inning());
+console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
